@@ -1,15 +1,14 @@
 "use client";
 import axios from "axios";
+import { useRouter } from 'next/router'; // استخدام useRouter بدلاً من useNavigate
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import scrollToTop from "../hooks/scrollToTop";
+import scrollToTop from "../hooks/scrollToTop"; // تأكد من أن هذا الهوك موجود
 
 const API_KEY = "AIzaSyAB9dG_zzrdvTcfVFlGbkZ_GQjPhqPE1yQ";
 const defaultThumbnail = "https://via.placeholder.com/300x200?text=No+Thumbnail";
 
-const PlaylistVideosPage = () => {
-    const { playlistId } = useParams();
-    const navigate = useNavigate();
+const PlaylistVideosPage = ({ playlistId }) => {
+    const router = useRouter();
     const [videos, setVideos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -66,7 +65,9 @@ const PlaylistVideosPage = () => {
         fetchVideos();
     }, [playlistId]);
 
-    scrollToTop();
+    useEffect(() => {
+        scrollToTop(); // تأكد من استخدام هذا الهوك في المكان الصحيح
+    }, []);
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
@@ -95,7 +96,7 @@ const PlaylistVideosPage = () => {
 
     const handleVideoClick = (videoUrl) => {
         const videoId = videoUrl.split("v=")[1];
-        navigate(`/video/${videoId}`);
+        router.push(`/video/${videoId}`); // التوجيه باستخدام next/router
     };
 
     if (loading) {
