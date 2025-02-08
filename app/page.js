@@ -6,7 +6,7 @@ import { Suspense, useContext, useEffect, useState } from "react";
 
 import ImageCard from "@/components/ImageCard";
 import LoadingPage from "@/components/Landing"; // Import default Loading component
-import PodcastIntro from "@/components/podcastIntro"; // Ensure PodcastIntro.js exports default PodcastIntro
+// import PodcastIntro from "@/components/podcastIntro"; // Ensure PodcastIntro.js exports default PodcastIntro
 import VideoCard from "@/components/VideoCard";
 import Virtualslides from "@/components/Virtualslides";
 import { useTranslations } from 'next-intl';
@@ -34,7 +34,7 @@ function Page() {
             <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
                 <LoadingPage />
 
-                <PodcastIntro />
+                {/* <PodcastIntro /> */}
                 <VideoCard link='/ayah' title={t('ayahs')} description={t('ayahs-desc')} src="/assets/islamic_2.mp4" />
                 <VideoCard link='/editions' title={t('Edition ')} description={t('Edition-desc')} poster='/assets/islamic_2.png' src='/assets/islamic_2.mp4' reverse={true} src="/assets/islamic_3.mp4" />
                 <ImageCard />

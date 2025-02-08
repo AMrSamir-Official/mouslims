@@ -1,5 +1,5 @@
 // components/CustomSwiper.js
-import PodcastIntro from '@/components/podcastIntro';
+// import PodcastIntro from '@/components/podcastIntro';
 import 'swiper/css'; // استيراد الأنماط الأساسية من Swiper
 import 'swiper/css/navigation'; // استيراد أنماط التنقل
 import 'swiper/css/pagination'; // استيراد أنماط الترقيم
@@ -7,7 +7,7 @@ import 'swiper/css/pagination'; // استيراد أنماط الترقيم
 export default function CustomSwiper() {
     return (
         <div>
-            <PodcastIntro />
+            {/* <PodcastIntro /> */}
             <div className="w-full">
 
                 <div className="text-center mb-8">
