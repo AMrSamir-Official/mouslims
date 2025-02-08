@@ -1,0 +1,28 @@
+{
+  "welcome": "Bienvenue sur la page d'accueil",
+  "menu": "Menu",
+  "home": "Accueil",
+  "about": "À propos",
+  "services": "Services",
+  "webDevelopment": "Développement Web",
+  "appDevelopment": "Développement d'applications",
+  "seo": "SEO",
+  "contact": "Contact",
+  "LoadingTxt": "Loading...",
+  "brandName": "تطبيق إسلامي",
+  "edition": "Our app offers a special E-Edition feature, containing the latest Islamic content, including articles, books, supplications, and commentaries. You can download the E-Editions and keep them for offline reading at any time. The editions are designed to be user-friendly and compatible with all devices, providing you with a modern and convenient way to access Islamic knowledge.",
+
+  "quranMetadata": "بيانات القرآن",
+  "logout": "Déconnexion",
+  "search": "Recherche",
+  "selectLanguage": "Sélectionnez votre langue",
+  "language": "Langue",
+  "mainContent": "Ici, vous pouvez trouver les Sourates du Coran.",
+  "loading": "Chargement",
+  "surahs": "Sourates",
+  "ayahs": "Versets",
+  "fantasyText1": "Vous suivrez sûrement le chemin de ceux qui vous ont précédés",
+  "description1": "La foi en Allah est le plus haut des rangs, et le Prophète (s) a expliqué à sa nation la faveur d'Allah envers eux à travers cette foi.",
+  "fantasyText2": "Réflexions sur la mort du Prophète (s)",
+  "description2": "C'était la sagesse d'Allah que la souffrance de la mort soit un destin commun à tous."
+}

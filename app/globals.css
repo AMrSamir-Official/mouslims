@@ -6,7 +6,11 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -15,6 +19,7 @@
 }
 
 body {
+  padding-top: 60px;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
@@ -24,4 +29,129 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* globals.css */
+
+html {
+  /* Default styles for light mode */
+}
+
+body {
+  background-color: white; /* Light mode background */
+  color: black; /* Light mode text color */
+  min-height: 100vh; /* Ensure the body takes full height */
+}
+
+html.dark body {
+  background-color: #1a202c; /* Dark mode background (gray-900) */
+  color: white; /* Dark mode text color */
+}
+
+.swiper-image {
+  width: 100%; /* Ensures the image takes the full width */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.swiper-content {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 20%; /* Adjust as needed for vertical alignment */
+  left: 5%; /* Adjust for horizontal alignment */
+  width: 90%; /* Makes sure the text overlay occupies enough width */
+  color: white; /* Text color for better visibility */
+  z-index: 10;
+  text-align: center; /* Center align the text */
+}
+
+.text-title {
+  font-size: 24px; /* Adjust font size */
+  font-weight: bold; /* Bold for emphasis */
+  margin: 0; /* Removes default margin */
+}
+
+.text-description {
+  font-size: 16px; /* Adjust description font size */
+  margin-top: 10px; /* Adds space between title and description */
+}
+
+.link-text {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent white for background */
+  color: maroon; /* Text color */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Removes underline */
+}
+
+.link-text:hover {
+  background-color: white; /* Changes background on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Add bounceIn animation for text */
+.bounceIn {
+  animation: bounceIn 1s forwards;
+}
+
+/* Add fade-in animation */
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.element.swiper-fade.element.swiper-initialized.element.swiper-horizontal.element.swiper-watch-progress.element.swiper-backface-hidden.element.mySwiper,
+.swiper.swiper-fade.swiper-initialized.swiper-horizontal.swiper-watch-progress.swiper-backface-hidden.mySwiper {
+  width: 100vw;
+  height: 100vh;
+  img.swiper-image {
+    object-fit: cover;
+  }
+}
+
+/* styles/scrollbar.css */
+
+/* Default scrollbar styles for light mode */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaaaaa; /* Color when hovering */
+}
+
+/* Scrollbar styles for dark mode */
+body.dark ::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: #555555; /* Darker color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners */
+}
+body.dark ::-webkit-scrollbar-thumb {
+  background: #000000b5;
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+  background: #777777; /* Color when hovering in dark mode */
 }
