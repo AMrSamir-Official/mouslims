@@ -47,8 +47,11 @@
   "surahNumber": "Surah Number",
   "numberOfAyahs": "Number of Ayahs",
   "revelationType": "Revelation Type",
+  "editionPlaceholder": "editionPlaceholder.",
+  "leaveBlankForAll": "leaveBlankForAll.",
+
   "ayah": "Ayah",
-  "searchQuran": "Search the Quran",
+  "searchQuran": "Search in the Quran",
   "keyword": "Keyword",
   "enterKeyword": "Enter a keyword to search...",
   "allSurahs": "All Surahs",
@@ -56,6 +59,7 @@
   "leaveBlank": "Leave blank to search all English editions.",
   "searching": "Searching...",
   "noResults": "No results found.",
+  "keywordPlaceholder": "keywordPlaceholder.",
   "searchError": "An error occurred while searching.",
   "searchResults": "Search Results"
 }

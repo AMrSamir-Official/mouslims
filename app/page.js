@@ -43,7 +43,7 @@ function Page() {
                 {/* Navigation Buttons */}
                 <div className="flex flex-wrap justify-center gap-4 p-6">
                     <Link href="/search" className={`bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded shadow transition ${darkMode ? 'bg-blue-600' : ''}`}>
-                        Search the Quran
+                        Search In the Quran
                     </Link>
                     <Link href="/editions" className={`bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded shadow transition ${darkMode ? 'bg-green-600' : ''}`}>
                         View Editions
