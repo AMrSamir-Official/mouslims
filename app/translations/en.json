@@ -27,13 +27,13 @@
   "Edition-desc": "Our app offers a special E-Edition feature, containing the latest Islamic content, including articles, books, supplications, and commentaries. You can download the E-Editions and keep them for offline reading at any time. The editions are designed to be user-friendly and compatible with all devices, providing you with a modern and convenient way to access Islamic knowledge.",
   "Surah": "Surah",
   "Surah-desc": "Enjoy E-Editions of Quranic Surahs, downloadable for offline reading, designed for all devices.",
-
   "ayah-desc": "E-Editions of Quranic Ayahs, offline-friendly, designed for all devices.",
   "Explore": "Explore",
   "podcast-title": "Our Podcast",
   "podcast-welcome-txt": "Welcome to Our Islamic Podcast",
-  "quranMetadata": "Quran Metadata",
+  "podcast-welcome-desc": "The Islamic podcast section on your site is a place where listeners can engage in enriching discussions about Islamic teachings, spirituality, and contemporary challenges faced by Muslims. It features episodes covering topics such as Quranic reflections, personal growth, and modern issues, led by experienced scholars and speakers. The content is available in multiple languages, ensuring a wide reach.",
   "Listen Now": "Listen Now",
+  "quranMetadata": "Quran Metadata",
   "languages": "Languages",
   "juz": "Juz",
   "manzil": "Manzil",
@@ -43,17 +43,13 @@
   "surahNumber": "Surah Number",
   "numberOfAyahs": "Number of Ayahs",
   "revelationType": "Revelation Type",
-
   "ayah": "Ayah",
   "searchQuran": "Search the Quran",
   "keyword": "Keyword",
   "enterKeyword": "Enter a keyword to search...",
-
   "allSurahs": "All Surahs",
-
   "exampleEdition": "e.g., en.asad or leave blank for default",
   "leaveBlank": "Leave blank to search all English editions.",
-
   "searching": "Searching...",
   "noResults": "No results found.",
   "searchError": "An error occurred while searching.",
