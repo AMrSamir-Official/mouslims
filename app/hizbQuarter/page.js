@@ -9,43 +9,42 @@ import { useContext, useEffect, useState } from 'react';
 
 export default function HizbQuarterPage() {
     const [hizbQuarter, setHizbQuarter] = useState([]);
-    const [selectedHizb, setSelectedHizb] = useState(1); // Default to 1
+    const [selectedHizb, setSelectedHizb] = useState(1);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const { darkMode } = useContext(ThemeContext);
-    const { locale } = useContext(LanguageContext); // Get the current locale
+    const { locale } = useContext(LanguageContext) || { locale: 'en' }; // قيمة افتراضية
     const t = useTranslations();
 
     const fetchHizbQuarter = async (hizbNumber) => {
         setLoading(true);
         setError(null);
         try {
-            // Determine the API endpoint based on the current locale
-            const edition = locale === 'ar' ? 'quran-uthmani' : 'en.asad'; // Add more editions as necessary
-            const response = await axios.get(`http://api.alquran.cloud/v1/hizbQuarter/${hizbNumber}/${edition}`);
+            const edition = locale === 'ar' ? 'quran-uthmani' : 'en.asad';
+            const response = await axios.get(`https://api.alquran.cloud/v1/hizbQuarter/${hizbNumber}`, {
+                params: { edition }
+            });
+
             if (response.data.code === 200) {
                 setHizbQuarter(response.data.data.ayahs);
                 setSelectedHizb(hizbNumber);
             } else {
-                setError(t('fetchError')); // Use translation for error message
+                setError(t('fetchError'));
             }
         } catch (err) {
-            setError(t('fetchError')); // Use translation for error message
+            setError(t('fetchError'));
         } finally {
             setLoading(false);
         }
     };
 
-    // Fetch Hizb Quarter when component mounts or when selectedHizb or locale changes
     useEffect(() => {
-        fetchHizbQuarter(selectedHizb);
-    }, [selectedHizb, locale]); // Include locale in dependencies
+        if (selectedHizb) fetchHizbQuarter(selectedHizb);
+    }, [selectedHizb, locale]);
 
     const handleHizbChange = (e) => {
-        const hizbNumber = e.target.value;
-        if (hizbNumber) {
-            fetchHizbQuarter(hizbNumber);
-        }
+        const hizbNumber = Number(e.target.value);
+        if (hizbNumber) fetchHizbQuarter(hizbNumber);
     };
 
     return (
@@ -54,7 +53,7 @@ export default function HizbQuarterPage() {
                 {t('hizbQuarterDetails')}
             </h1>
 
-            {/* Hizb Quarter Selector */}
+            {/* اختيار الحزب */}
             <div className="flex justify-center mb-6">
                 <select
                     value={selectedHizb}
@@ -69,15 +68,17 @@ export default function HizbQuarterPage() {
                 </select>
             </div>
 
-            {loading && <Loading />}
-            {error && <div className="text-red-500 text-center">{error}</div>}
-
-            {!loading && !error && (
+            {/* عرض البيانات */}
+            {loading ? (
+                <Loading />
+            ) : error ? (
+                <div className="text-red-500 text-center">{error}</div>
+            ) : (
                 <div className="space-y-4">
                     {hizbQuarter.map((ayah) => (
                         <div key={ayah.number} className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow p-4`}>
                             <p className={`text-lg text-center ${darkMode ? 'text-gray-100' : 'text-gray-800'}`}>
-                                {ayah.text} {/* This will be in the selected language based on the edition */}
+                                {ayah.text}
                             </p>
                             <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} mt-2`}>
                                 {t('surah')} {ayah.surah.number}: {t('ayah')} {ayah.numberInSurah}
