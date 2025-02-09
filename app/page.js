@@ -36,7 +36,7 @@ function Page() {
 
                 {/* <PodcastIntro /> */}
                 <VideoCard link='/ayah' title={t('ayahs')} description={t('ayahs-desc')} src="/assets/islamic_2.mp4" />
-                <VideoCard link='/editions' title={t('Edition ')} description={t('Edition-desc')} poster='/assets/islamic_2.png' src='/assets/islamic_2.mp4' reverse={true} src="/assets/islamic_3.mp4" />
+                <VideoCard link='/editions' title={t('Edition ')} description={t('Edition-desc')} poster='/assets/islamic_2.png' src='/assets/islamic_2.mp4' reverse={true} />
                 <ImageCard />
                 <Virtualslides />
 
