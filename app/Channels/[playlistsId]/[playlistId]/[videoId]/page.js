@@ -1,8 +1,8 @@
 "use client";
+import scrollToTop from "@/hooks/scrollToTop"; // تأكد من أن هذا الهوك موجود
 import axios from "axios";
 import { useRouter } from 'next/router'; // استخدام useRouter بدلاً من useNavigate
 import { useEffect, useState } from "react";
-import scrollToTop from "../hooks/scrollToTop"; // تأكد من أن هذا الهوك موجود
 
 const API_KEY = "AIzaSyAB9dG_zzrdvTcfVFlGbkZ_GQjPhqPE1yQ";
 const defaultThumbnail = "https://via.placeholder.com/300x200?text=No+Thumbnail";
@@ -14,7 +14,6 @@ const PlaylistVideosPage = ({ playlistId }) => {
     const [error, setError] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
     const [sortOrder, setSortOrder] = useState("default");
-
     useEffect(() => {
         const fetchVideos = async () => {
             let allVideos = [];
